@@ -58,3 +58,10 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+# Rider files/directories
+/.idea/*
+!/.idea/.idea.*
+/.idea/.idea.*/*
+!/.idea/.idea.*/.idea
+/.idea/.idea.*/.idea/*
+!/.idea/.idea.*/.idea/runConfigurations
