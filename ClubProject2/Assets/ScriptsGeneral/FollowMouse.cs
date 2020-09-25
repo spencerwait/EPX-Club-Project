@@ -16,9 +16,6 @@ public class FollowMouse : MonoBehaviour
     {
         target = cam.ScreenToWorldPoint(Input.mousePosition);
         target.z = -.10f;
-        //target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        //target = new Vector2(target.x, target.y);
-        print(target);
         if (Vector2.Distance(transform.position, target ) > stoppingDistance)
         {
             transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
