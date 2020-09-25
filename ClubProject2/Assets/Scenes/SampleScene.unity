@@ -442,7 +442,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35f44495d080a544f8c303058f9b3550, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 70
+  speed: 250
   stoppingDistance: 0
   cam: {fileID: 963194227}
 --- !u!50 &389680595
@@ -1346,10 +1346,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.5
+  m_FalloffIntensity: 1
   m_Color: {r: 0.07694017, g: 0.8584906, b: 0.7755233, a: 1}
   m_Intensity: 1
-  m_LightVolumeOpacity: 0
+  m_LightVolumeOpacity: 0.157
   m_ApplyToSortingLayers: 00000000
   m_LightCookieSprite: {fileID: 0}
   m_UseNormalMap: 0
@@ -1360,7 +1360,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 1.2
-  m_PointLightOuterRadius: 3.9858701
+  m_PointLightOuterRadius: 17.302076
   m_PointLightDistance: 3
   m_PointLightQuality: 1
   m_ShapeLightParametricSides: 5
@@ -1380,7 +1380,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2098872763}
-  m_LocalRotation: {x: -0, y: -0, z: 0.06884093, w: 0.9976277}
+  m_LocalRotation: {x: -0, y: -0, z: -0.15612827, w: 0.9877368}
   m_LocalPosition: {x: 0.0041, y: -0.0005, z: 0}
   m_LocalScale: {x: 0.14334774, y: 0.14840859, z: 1}
   m_Children: []
