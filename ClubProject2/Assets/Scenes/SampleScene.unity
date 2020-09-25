@@ -370,8 +370,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35f44495d080a544f8c303058f9b3550, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 80
+  speed: 70
   stoppingDistance: 0
+  cam: {fileID: 963194227}
 --- !u!50 &389680595
 Rigidbody2D:
   serializedVersion: 4
@@ -658,8 +659,8 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
-  orthographic size: 5
+  orthographic: 1
+  orthographic size: 64.00408
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

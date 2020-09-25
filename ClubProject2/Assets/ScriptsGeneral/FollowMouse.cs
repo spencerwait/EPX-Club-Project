@@ -7,14 +7,18 @@ public class FollowMouse : MonoBehaviour
 
     public float speed = 0.0f;
     public float stoppingDistance = 0.0f;
+    public Camera cam;
     private Vector3 target;
 
 
     // Update is called once per frame
     void Update()
     {
-        target = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0f);
+        target = cam.ScreenToWorldPoint(Input.mousePosition);
+        target.z = -.10f;
         //target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        //target = new Vector2(target.x, target.y);
+        print(target);
         if (Vector2.Distance(transform.position, target ) > stoppingDistance)
         {
             transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
