@@ -358,8 +358,8 @@ GameObject:
   - component: {fileID: 389680592}
   - component: {fileID: 389680594}
   - component: {fileID: 389680595}
-  - component: {fileID: 389680596}
   - component: {fileID: 389680597}
+  - component: {fileID: 389680596}
   m_Layer: 0
   m_Name: Will O Wisp
   m_TagString: Untagged
@@ -426,7 +426,7 @@ Transform:
   m_GameObject: {fileID: 389680591}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -16.59, y: -0.32, z: 0}
-  m_LocalScale: {x: 6.9760427, y: 6.7381544, z: 1}
+  m_LocalScale: {x: 6.976043, y: 6.7381544, z: 1}
   m_Children:
   - {fileID: 2098872765}
   m_Father: {fileID: 0}
@@ -480,8 +480,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81ff18a550f11cb4aa129fb1020fac79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 62.47
+  radius: 12
   enemyTag: Enemy
+  lightAnim: {fileID: 2098872766}
 --- !u!58 &389680597
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1384,8 +1385,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2098872765}
   - component: {fileID: 2098872764}
+  - component: {fileID: 2098872766}
   m_Layer: 0
-  m_Name: Point Light 2D (1)
+  m_Name: WispLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1439,10 +1441,29 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2098872763}
-  m_LocalRotation: {x: -0, y: -0, z: -0.15612827, w: 0.9877368}
-  m_LocalPosition: {x: 0.0041, y: -0.0005, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.14334774, y: 0.14840859, z: 1}
   m_Children: []
   m_Father: {fileID: 389680593}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &2098872766
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2098872763}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 70a485b2041a41044bd4bdbb0ccfad6d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
