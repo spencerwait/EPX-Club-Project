@@ -358,6 +358,8 @@ GameObject:
   - component: {fileID: 389680592}
   - component: {fileID: 389680594}
   - component: {fileID: 389680595}
+  - component: {fileID: 389680596}
+  - component: {fileID: 389680597}
   m_Layer: 0
   m_Name: Will O Wisp
   m_TagString: Untagged
@@ -442,7 +444,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35f44495d080a544f8c303058f9b3550, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 250
+  speed: 25
   stoppingDistance: 0
   cam: {fileID: 963194227}
 --- !u!50 &389680595
@@ -466,6 +468,36 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &389680596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 389680591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81ff18a550f11cb4aa129fb1020fac79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 62.47
+  enemyTag: Enemy
+--- !u!58 &389680597
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 389680591}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.1
 --- !u!1 &401079915
 GameObject:
   m_ObjectHideFlags: 0
@@ -550,9 +582,10 @@ GameObject:
   - component: {fileID: 506718326}
   - component: {fileID: 506718325}
   - component: {fileID: 506718328}
+  - component: {fileID: 506718329}
   m_Layer: 0
   m_Name: BirdMan 1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -656,6 +689,32 @@ MonoBehaviour:
   speed: 12
   stoppingDistance: 0
   targetObject: {fileID: 580505921}
+--- !u!61 &506718329
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 506718324}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.06357002, y: -1.0170918}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 11.83, y: 19.93}
+    newSize: {x: 11.83, y: 19.93}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 6.871662, y: 17.260136}
+  m_EdgeRadius: 0
 --- !u!1 &580505921
 GameObject:
   m_ObjectHideFlags: 0
@@ -957,10 +1016,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: baa8fbc25a168164ca67880d2b8f1b89, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 44ea4d01432a47e499a8ada14e7f592f, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.15
-  m_Pitch: 1.5
+  m_Pitch: 0.75
   Loop: 1
   Mute: 0
   Spatialize: 0
