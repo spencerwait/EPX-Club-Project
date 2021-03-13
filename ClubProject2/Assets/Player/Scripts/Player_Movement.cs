@@ -48,7 +48,6 @@ public class Player_Movement : MonoBehaviour
     void FixedUpdate()
     {
         //Should flip the sprite to face the direction its moving
-        //NOT Currently working
         if (Input.GetAxisRaw("Horizontal") != 0)
         {
             if (Input.GetAxisRaw("Horizontal") >= 0.01f)
