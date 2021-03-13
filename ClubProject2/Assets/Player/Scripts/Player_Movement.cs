@@ -10,6 +10,7 @@ public class Player_Movement : MonoBehaviour
     public float speed = 0.0f;
     private Vector2 moveVelocity;
     private Animator anim;
+    private SpriteRenderer sr;
 
 
     // Use this for initialization
@@ -19,6 +20,7 @@ public class Player_Movement : MonoBehaviour
         //Obtains info from the player sprite
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        sr = GetComponent<SpriteRenderer>();
 
     }
 
@@ -32,11 +34,12 @@ public class Player_Movement : MonoBehaviour
         moveVelocity = moveInput.normalized * speed;
 
         //Allows the animator ro know if the sprite is moving
-        if(moveVelocity.magnitude > 0.01f)
+        if (moveVelocity.magnitude > 0.01f)
         {
             anim.SetBool("Moving", true);
         }
-        else{
+        else
+        {
             anim.SetBool("Moving", false);
         }
 
@@ -46,13 +49,16 @@ public class Player_Movement : MonoBehaviour
     {
         //Should flip the sprite to face the direction its moving
         //NOT Currently working
-        if (Input.GetAxisRaw("Horizontal") >= 0.01f)
+        if (Input.GetAxisRaw("Horizontal") != 0)
         {
-            transform.localScale = new Vector3(-1f, 1f, 1f);
-        }
-        else if (Input.GetAxisRaw("Horizontal") <= 0.01f)
-        {
-            transform.localScale = new Vector3(1f, 1f, 1f);
+            if (Input.GetAxisRaw("Horizontal") >= 0.01f)
+            {
+                sr.flipX = false;
+            }
+            else if (Input.GetAxisRaw("Horizontal") <= 0.01f)
+            {
+                sr.flipX = true;
+            }
         }
         rb.MovePosition(rb.position + moveVelocity * Time.fixedDeltaTime);
     }
