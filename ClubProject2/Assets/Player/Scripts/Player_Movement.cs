@@ -43,6 +43,9 @@ public class Player_Movement : MonoBehaviour
             anim.SetBool("Moving", false);
         }
 
+        anim.SetFloat("Speed", moveVelocity.magnitude);
+        print(moveVelocity.magnitude);
+
     }
 
     void FixedUpdate()
