@@ -11,6 +11,7 @@ public class Player_Movement : MonoBehaviour
     private Vector2 moveVelocity;
     private Animator anim;
     private SpriteRenderer sr;
+    private HideScript hideScript;
 
 
     // Use this for initialization
@@ -21,7 +22,7 @@ public class Player_Movement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
-
+        hideScript = GetComponent<HideScript>();
     }
 
     // Update is called once per frame
@@ -50,8 +51,7 @@ public class Player_Movement : MonoBehaviour
 
     void FixedUpdate()
     {
-        //Should flip the sprite to face the direction its moving
-        //NOT Currently working
+        //Flip the sprite to face the direction its moving
         if (Input.GetAxisRaw("Horizontal") != 0)
         {
             if (Input.GetAxisRaw("Horizontal") >= 0.01f)
@@ -63,6 +63,10 @@ public class Player_Movement : MonoBehaviour
                 sr.flipX = true;
             }
         }
-        rb.MovePosition(rb.position + moveVelocity * Time.fixedDeltaTime);
+
+        if (hideScript.canMove)
+        {
+            rb.MovePosition(rb.position + moveVelocity * Time.fixedDeltaTime);
+        }
     }
 }
