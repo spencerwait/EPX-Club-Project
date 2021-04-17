@@ -27,7 +27,7 @@ public class WispTrail : MonoBehaviour
         trail.sharedMaterial = new Material(Shader.Find("Unlit/Color"));
         trail.sharedMaterial.color = trailColor;
         trail.sortingLayerName = "Foreground";
-        trail.sortingOrder = 0;
+        trail.sortingOrder = 1;
     }
 
     // Update is called once per frame

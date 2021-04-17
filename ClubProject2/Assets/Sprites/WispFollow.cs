@@ -7,11 +7,13 @@ public class WispFollow : MonoBehaviour
     public float followSpeed = 1f;
     public float stoppingDistance = 0.5f;
     public float attackSpeed = 1f;
+    public float returnSpeed = 1f;
     
     private Transform playerTarget;
     private Vector3 attackTarget;
     
     private bool isAttacking = false;
+    private bool isReturning = false;
 
     void Start()
     {
@@ -22,7 +24,7 @@ public class WispFollow : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (!isAttacking)
+        if (!isAttacking && !isReturning)
         {
             Follow();
 
@@ -36,6 +38,10 @@ public class WispFollow : MonoBehaviour
         if (isAttacking)
         {
             Attack();
+        }
+        if (isReturning)
+        {
+            Return();
         }
     }
 
@@ -56,6 +62,19 @@ public class WispFollow : MonoBehaviour
         else
         {
             isAttacking = false;
+            isReturning = true;
+        }
+    }
+
+    void Return()
+    {
+        if (Vector2.Distance(transform.position, playerTarget.position) > stoppingDistance)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, playerTarget.position, returnSpeed * Time.deltaTime);
+        }
+        else
+        {
+            isReturning = false;
         }
     }
 }

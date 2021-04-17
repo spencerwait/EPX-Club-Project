@@ -13,6 +13,8 @@ public class Player_Movement : MonoBehaviour
     private SpriteRenderer sr;
     private HideScript hideScript;
 
+    private NPC_Controller npc;
+
 
     // Use this for initialization
     void Start()
@@ -64,9 +66,36 @@ public class Player_Movement : MonoBehaviour
             }
         }
 
-        if (hideScript.canMove)
+        if (!inDialogue())
         {
             rb.MovePosition(rb.position + moveVelocity * Time.fixedDeltaTime);
         }
+    }
+    
+    // FOR TRIGGERING DIALOGUE
+    // bool for preventing player movement during dialogue
+    private bool inDialogue()
+    {
+        if (npc != null)
+            return npc.DialogueActive();
+        else
+            return false;
+    }
+    // checks for Collider2D attached to gameObject with 'NPC' tag
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "NPC")
+        {
+            npc = collision.gameObject.GetComponent<NPC_Controller>();
+
+            // 'E' to activate dialogue
+            if(Input.GetKey(KeyCode.E))
+                collision.gameObject.GetComponent<NPC_Controller>().ActivateDialogue();
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        npc = null;
     }
 }
